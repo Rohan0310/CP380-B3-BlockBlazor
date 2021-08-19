@@ -33,7 +33,7 @@ namespace CP380_B3_BlockBlazor.Data
         //
         public async Task<IEnumerable<Block>> GetBlocksAsync()
         {
-            var response = await _httpClient.GetAsync(_config["blockurl"]);
+            var response = await _httpClient.GetAsync(_config["url"]);
             if (response.IsSuccessStatusCode)
             {
                 JsonSerializerOptions options = new(JsonSerializerDefaults.Web);

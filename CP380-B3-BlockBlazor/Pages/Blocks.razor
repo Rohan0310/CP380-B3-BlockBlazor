@@ -27,9 +27,9 @@ else
     @foreach (var Mov in blocklist)
     {
     <div class="card-body">
-        <h6 class="card-title"> @Mov.Nonce </h6>
-        <h5 class="card-subtitle mb-2 text-muted">@Mov.Hash</h5>
-        <h5 class="card-title"> @Mov.PreviousHash </h5>
+        <h6 class="card-title"> Hash: @Mov.Hash </h6>
+        <h5 class="card-subtitle mb-2 text-muted">Nonce:  @Mov.Nonce </h5>
+        <h5 class="card-title"> Previous Hash: @Mov.PreviousHash </h5>
 
 
     </div>
@@ -38,11 +38,13 @@ else
 </div>
            
     }
-        
+    
 
     @code {
 
-        private IEnumerable<Block> blocklist;
+         IEnumerable<CP380_B1_BlockList.Models.Block> blocklist;
+        CP380_B1_BlockList.Models.Block blockSubmit;
+
 
         protected override async Task OnInitializedAsync()
         {
@@ -50,5 +52,9 @@ else
 
             blocklist = await _service.GetBlocksAsync();
 
+        }
+        private async Task HandleValidSubmit()
+        {
+            
         }
     }
