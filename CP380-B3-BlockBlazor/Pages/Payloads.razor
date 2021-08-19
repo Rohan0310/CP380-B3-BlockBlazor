@@ -13,6 +13,32 @@ else
     <!-- TODO: Render a table with all of the pending transactions 
                This table should include all of the fields for each pending transaction
       -->
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Item</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var payload in payloads)
+                {
+            <tr>
+                <td>User</td>
+                <td>@payload.User</td>
+                <td>Type</td>
+                <td>@payload.Type</td>
+                <td>Amount</td>
+                <td>@payload.Amount</td>
+                <td>Item</td>
+                <td>@payload.Item</td>
+            </tr>
+                }
+        </tbody>
+    </table>
 }
 
 <p></p>
